@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "eyeball": "./bin/eyeball"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/jaz303/eyeball.git"
