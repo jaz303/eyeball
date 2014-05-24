@@ -1,7 +1,7 @@
 {
   "name": "eyeball",
   "version": "0.1.1",
-  "description": "",
+  "description": "Colorize terminal output based on elapsed time since the previous write",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
