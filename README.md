@@ -1,8 +1,8 @@
 # eyeball
 
-`eyeball` is a simple utility that color-cycles terminal output based on the elapsed time since the previous line was written. This is useful when you've got a noisy process that produces a lot of similar looking output, making it hard to determine when activity occurs.
+`eyeball` is a simple utility that color-cycles terminal output based on the elapsed time since the previous line was written. This is useful, for example, when you've got a noisy process that produces a lot of similar looking output, making it hard to determine when activity occurs.
 
-Here's some example output; note that the colour changes whenever `dt` &ge; 1000:
+Check out this screenshot of an example session; note that the colour changes whenever `dt` &ge; 1000:
 
 ![eyeball Screenshot](screenshot.png)
 
