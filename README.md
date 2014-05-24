@@ -4,7 +4,7 @@
 
 Check out this screenshot of an example session; note that the colour changes whenever `dt` &ge; 1000:
 
-![eyeball Screenshot](screenshot.png)
+![eyeball Screenshot](https://raw.githubusercontent.com/jaz303/eyeball/master/screenshot.png)
 
 ## Installation
 
