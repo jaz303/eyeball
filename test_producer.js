@@ -1,16 +1,24 @@
+var lastAt = 0;
+
+function print(line) {
+	var now = Date.now(), dt = now - lastAt;
+	console.log('line ' + line + ', dt=' + dt);
+	lastAt = now;
+}
+
 setTimeout(function start() {
-	console.log("line 1");
+	print(1);
 	setTimeout(function() {
-		console.log("line 2");
+		print(2);
 		setTimeout(function() {
-			console.log("line 3");
+			print(3);
 			setTimeout(function() {
-				console.log("line 4");
+				print(4);
 				setTimeout(function() {
-					console.log("line 5");
+					print(5);
 					setTimeout(start, 200);
 				}, 1200);
 			}, 600)
 		}, 500);
 	}, 100);
-}, 0)
+}, 0);
