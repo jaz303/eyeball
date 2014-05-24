@@ -1,6 +1,6 @@
 {
   "name": "eyeball",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -10,8 +10,7 @@
     "type": "git",
     "url": "git://github.com/jaz303/eyeball.git"
   },
-  "keywords": [
-  ],
+  "keywords": [],
   "author": "Jason Frame <jason@onehackoranother.com> (http://jasonframe.co.uk)",
   "license": "ISC",
   "bugs": {
