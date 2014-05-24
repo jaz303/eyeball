@@ -16,7 +16,7 @@ var options = require('docopt').docopt([
     "Options:",
     "  -c COLORS, --colors=COLORS  List of colors to cycle [default: cyan,magenta]",
     "  -d DELAY, --delay=DELAY     Delay time, in seconds [default: 1]",
-    "  -n, --no-reset              Do no reset the timer after each line",
+    "  --no-reset                  Do no reset the timer after each line",
     "  -v, --version               Display program version and quit",
     "  -h, --help                  Display this message and quit"
 ].join("\n"), {
