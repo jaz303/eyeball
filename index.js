@@ -10,11 +10,36 @@ var COLORS = {
     reset       : "\x1b[0m"
 };
 
-var cycle           = ['red', 'green', 'magenta'];
+var options = require('docopt').docopt([
+    "Usage: eyeball [options]",
+    "",
+    "Options:",
+    "  -c COLORS, --colors=COLORS  List of colors to cycle [default: cyan,magenta]",
+    "  -d DELAY, --delay=DELAY     Delay time, in seconds [default: 1]",
+    "  -n, --no-reset              Do no reset the timer after each line",
+    "  -v, --version               Display program version and quit",
+    "  -h, --help                  Display this message and quit"
+].join("\n"), {
+    help        : true,
+    version     : require('./package.json').version
+});
+
+var cycle           = options['--colors'].split(',').map(function(c) { return c.trim(); });
+var delay           = parseFloat(options['--delay']);
+var reset           = !options['--no-reset'];
 var colorIndex      = -1;
-var delay           = 1;
-var reset           = true;
 var lastColorChange = 0;
+
+if (!cycle.every(function(color) { return color in COLORS })) {
+    process.stderr.write("Invalid color(s) specified.\n");
+    process.stderr.write("Valid colors: " + Object.keys(COLORS).join(', ') + "\n");
+    process.exit(1);
+}
+
+if (isNaN(delay) || delay <= 0) {
+    process.stderr.write("Invalid delay; delay must be a positive number.\n");
+    process.exit(1);
+}
 
 function colorize(line, color) {
     return COLORS[color] + line + COLORS.reset;

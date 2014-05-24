@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/jaz303/eyeball",
   "dependencies": {
-    "lazy": "~1.0.11"
+    "lazy": "~1.0.11",
+    "docopt": "~0.4.0"
   }
 }
