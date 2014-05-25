@@ -1,6 +1,6 @@
 {
   "name": "eyeball",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "description": "Colorize terminal output based on elapsed time since the previous write",
   "main": "index.js",
   "scripts": {
