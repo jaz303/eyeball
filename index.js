@@ -1,4 +1,5 @@
 var Lazy = require('lazy');
+var fs = require('fs');
 
 var COLORS = {
     red         : "\x1b[31m",
@@ -10,16 +11,7 @@ var COLORS = {
     reset       : "\x1b[0m"
 };
 
-var options = require('docopt').docopt([
-    "Usage: eyeball [options]",
-    "",
-    "Options:",
-    "  -c COLORS, --colors=COLORS  List of colors to cycle [default: cyan,magenta]",
-    "  -d DELAY, --delay=DELAY     Delay time, in seconds [default: 1]",
-    "  --no-reset                  Do no reset the timer after each line",
-    "  -v, --version               Display program version and quit",
-    "  -h, --help                  Display this message and quit"
-].join("\n"), {
+var options = require('docopt').docopt(fs.readFileSync(__dirname + '/usage.txt', 'utf8'), {
     help        : true,
     version     : require('./package.json').version
 });
