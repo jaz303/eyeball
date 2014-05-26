@@ -1,6 +1,9 @@
 var Lazy = require('lazy');
 var fs = require('fs');
 
+var err = process.stderr.write.bind(process.stderr);
+var out = process.stdout.write.bind(process.stdout);
+
 var COLORS = {
     red         : "\x1b[31m",
     green       : "\x1b[32m",
@@ -23,13 +26,13 @@ var colorIndex      = -1;
 var lastColorChange = 0;
 
 if (!cycle.every(function(color) { return color in COLORS })) {
-    process.stderr.write("Invalid color(s) specified.\n");
-    process.stderr.write("Valid colors: " + Object.keys(COLORS).join(', ') + "\n");
+    err("Invalid color(s) specified.\n");
+    err("Valid colors: " + Object.keys(COLORS).join(', ') + "\n");
     process.exit(1);
 }
 
 if (isNaN(delay) || delay <= 0) {
-    process.stderr.write("Invalid delay; delay must be a positive number.\n");
+    err("Invalid delay; delay must be a positive number.\n");
     process.exit(1);
 }
 
@@ -51,8 +54,8 @@ new Lazy(process.stdin)
                 lastColorChange = now;
             }
 
-            process.stdout.write(colorize(line.toString(), cycle[colorIndex]));
-            process.stdout.write("\n");
+            out(colorize(line.toString(), cycle[colorIndex]));
+            out("\n");
 
         });
 
