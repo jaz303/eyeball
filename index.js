@@ -92,7 +92,8 @@ new Lazy(process.stdin)
         .lines
         .forEach(function(line) {
             var colorIndex = step(state, Date.now());
-            out(colorize(line.toString(), config.cycle[colorIndex % config.cycle.length]));
+            var lineStr = (line && line.length > 0) ? line.toString() : '';
+            out(colorize(lineStr, config.cycle[colorIndex % config.cycle.length]));
             out("\n");
             state.lineNumber++;
         });
