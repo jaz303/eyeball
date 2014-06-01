@@ -1,8 +1,13 @@
 Usage: eyeball [options]
 
 Options:
+  -d DELAY, --delay=DELAY     Delay mode: cycle color when delay between
+                              lines is >= DELAY. This is the default mode;
+                              DELAY defaults to 1.
+  -l LINES, --lines=LINES     Line mode: cycle color every LINES lines
+  -t TIME, --time=TIME        Time mode: cycle color every TIME seconds
   -c COLORS, --colors=COLORS  List of colors to cycle [default: cyan,magenta]
-  -d DELAY, --delay=DELAY     Delay time, in seconds [default: 1]
-  --no-reset                  Do no reset the timer after each line
+  --no-reset                  Do no reset the timer after each line.
+                              (Applies to "Delay" mode only)
   -v, --version               Display program version and quit
   -h, --help                  Display this message and quit

@@ -2,7 +2,7 @@ var lastAt = 0;
 
 function print(line) {
 	var now = Date.now(), dt = now - lastAt;
-	console.log('line ' + line + ', dt=' + dt);
+	console.log('line ' + line + ', abs=' + now + ', dt=' + dt);
 	lastAt = now;
 }
 

@@ -6,6 +6,8 @@ Check out this screenshot of an example session; note that the colour changes wh
 
 ![eyeball Screenshot](https://raw.githubusercontent.com/jaz303/eyeball/master/screenshot.png)
 
+As of version 0.3.0, `eyeball` can also cycle colors every n lines or every n seconds by using the `-l` and `-t` options, respectively. See _Customisation_, below.
+
 ## Installation
 
 	$ npm install -g eyeball
@@ -26,9 +28,14 @@ Change colour whenever output is delayed by 5s or more, cycling between red, gre
 Usage: eyeball [options]
 
 Options:
+  -d DELAY, --delay=DELAY     Delay mode: cycle color when delay between
+                              lines is >= DELAY. This is the default mode;
+                              DELAY defaults to 1.
+  -l LINES, --lines=LINES     Line mode: cycle color every LINES lines
+  -t TIME, --time=TIME        Time mode: cycle color every TIME seconds
   -c COLORS, --colors=COLORS  List of colors to cycle [default: cyan,magenta]
-  -d DELAY, --delay=DELAY     Delay time, in seconds [default: 1]
-  -n, --no-reset              Do no reset the timer after each line
+  --no-reset                  Do no reset the timer after each line.
+                              (Applies to "Delay" mode only)
   -v, --version               Display program version and quit
   -h, --help                  Display this message and quit
 ```
