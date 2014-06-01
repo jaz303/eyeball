@@ -40,16 +40,29 @@ Options:
   -h, --help                  Display this message and quit
 ```
 
+### Modes
+
+#### Delay
+
+(This is the default mode)
+
+In Delay mode, output color will cycle based on the time delay between writes; that is, a colour change is triggered whenever the time difference between any two successive lines is &ge; `DELAY`. The default value for `DELAY` is 1 second, overridable via the `-d`/`--delay=` option.
+
+When `--no-reset` is specifed, the point of reference is adjusted such that colour change is instead triggered whenever the time since _the previous colour change_ is &ge; DELAY.
+
+#### Lines
+
+In Lines mode, output color will cycle every n lines, as specified by the `-l`/`--lines=` option.
+
+#### Time
+
+In Time mode, output color will cycle ever n seconds, as specified by the `-t`/`--time=` option.
+
 ### Supported options
 
   * `-c COLORS`, `--colors=COLORS`: comma-separated list of colours through which to cycle.<br>Supported values: `red`, `green`, `yellow`, `blue`, `magenta`, `cyan`, `reset`.
-  * `-d DELAY`, `--delay=DELAY`: Delay time, specified in seconds.
-  * `--no-reset`: Under normal conditions, `eyeball`'s point of reference for triggering a colour change is the time at which the previous line was written; that is, a colour change is triggered whenever the time difference between any two successive lines is &ge; DELAY. When `--no-reset` is specifed, this behaviour is adjusted such that colour change is instead triggered whenever the time since _the previous colour change_ is &ge; DELAY.
-
 
 ## Copyright &amp; License
-
-
 
 &copy; 2014 Jason Frame [ [@jaz303](http://twitter.com/jaz303) / [jason@onehackoranother.com](mailto:jason@onehackoranother.com) ]
 
