@@ -50,13 +50,28 @@ In Delay mode, output color will cycle based on the time delay between writes; t
 
 When `--no-reset` is specifed, the point of reference is adjusted such that colour change is instead triggered whenever the time since _the previous colour change_ is &ge; DELAY.
 
+    # color cycle on delay >= 1s
+    $ eyeball
+
+    # color cycle on delay >= 5.5s
+    $ eyeball -d 5.5
+    $ eyeball --delay=5.5
+
 #### Lines
 
 In Lines mode, output color will cycle every n lines, as specified by the `-l`/`--lines=` option.
 
+    # color cycle ever 3 lines
+    $ eyeball -l 3
+    $ eyeball --lines=3
+
 #### Time
 
 In Time mode, output color will cycle ever n seconds, as specified by the `-t`/`--time=` option.
+
+    # color cycle every 10 seconds
+    $ eyeball -t 10
+    $ eyeball --time=10
 
 ### Supported options
 
