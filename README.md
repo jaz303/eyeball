@@ -49,7 +49,7 @@ Options:
 In Delay mode, output color will cycle based on the time delay between writes; that is, a colour change is triggered whenever the time difference between any two successive lines is &ge; `DELAY`. The default value for `DELAY` is 1 second, overridable via the `-d`/`--delay=` option.
 
     # color cycle on delay >= 1s
-    $ eyeball
+    $ my-process | eyeball
 
     # color cycle on delay >= 5.5s
     $ my-process | eyeball -d 5.5
